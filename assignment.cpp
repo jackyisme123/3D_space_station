@@ -1,8 +1,8 @@
 //  ========================================================================
 //  COSC363: Computer Graphics (2018);  University of Canterbury.
 //
-//  FILE NAME: Skybox.cpp
-//  See Lab03.pdf for details
+//  FILE NAME: assgniment.cpp
+//  AUTHOR: YUAN CUI
 //  ========================================================================
 
 #include <iostream>
@@ -61,7 +61,7 @@ bool robot_in_house=true;
 bool door_open = false;
 int robot_direction = 0;
 int robot_power = 3;
-int robot_speed = 5;
+int robot_speed = 2;
 int up_speed =1;
 bool spin_over =false;
 int robot_angle=0;
@@ -1696,6 +1696,7 @@ void display(void)
 		eye_x += 5*sin(lookAngle);
 		eye_z -= 5*cos(lookAngle);
 	}
+    //shift view
     else if(key == GLUT_KEY_F1)
     {
         printf("%d %d\n", ball1_direction, ball2_direction);
@@ -1722,6 +1723,7 @@ void display(void)
 	look_x = eye_x + 100*sin(lookAngle);
 	look_z = eye_z - 100*cos(lookAngle);
     
+    //collision detection
     if(eye_x >= 850) eye_x=850;
     else if(eye_x <= -850) eye_x=-850;
     if(eye_z >=850) eye_z=850;
@@ -1753,16 +1755,7 @@ void timer(int value)
         look_x = 0;
         look_z = 0;
     } 
-    //~ else
-    //~ {
-        //~ eye_x=look_at_backup[0];
-        //~ cam_hgt = look_at_backup[1];
-        //~ eye_z = look_at_backup[2];
-        //~ look_x = look_at_backup[3];
-        //~ look_z = look_at_backup[4];
-    //~ }
-    
-    //printf("%f %f %f %d %d\n", ball_theta1, ball_theta2, ball_speed, ball1_direction, ball2_direction);
+
     sun0_angle += 2;
     earth_angle ++;
     if(sun0_angle>360) sun0_angle=0;
