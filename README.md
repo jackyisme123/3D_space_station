@@ -4,4 +4,4 @@
 C++
 
 ## Content
-Detais please view 
+Detais please view [my report](https://github.com/jackyisme123/3D_space_station/blob/master/assignment_report.pdf)
